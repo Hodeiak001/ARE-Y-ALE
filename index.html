@@ -1,83 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Recetitas de Ale y Are</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fff8f0;
-      color: #333;
+      margin: 0;
+      padding: 0;
+      background: #f5fafd;
+      color: #4d4d4d;
+    }
+
+    header {
+      background: linear-gradient(90deg, #c7ceea, #b5ead7);
       padding: 20px;
-      max-width: 800px;
-      margin: auto;
     }
 
-    h1 {
-      color: #b35f5f;
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 10px;
+    header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: #4d4d4d;
     }
 
-    .receta {
-      background-color: #fff;
-      border-radius: 15px;
+    header small {
+      display: block;
+      font-size: 1rem;
+      color: #555;
+      margin-top: 5px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 30px auto;
       padding: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    .receta img {
+    img {
       width: 100%;
       border-radius: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     h2 {
-      color: #875858;
+      color: #7766c6;
     }
 
     ul {
-      padding-left: 20px;
+      list-style: none;
+      padding-left: 0;
     }
 
-    .footer {
+    ul li::before {
+      content: "♥";
+      color: #b388eb;
+      margin-right: 8px;
+    }
+
+    footer {
       text-align: center;
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #999;
+      font-size: 0.9rem;
+      padding: 20px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <h1>Recetitas de Ale y Are</h1>
+  <header>
+    <h1>Recetitas de Ale y Are</h1>
+    <small>Nuestro rinconcito de cosis</small>
+  </header>
 
-  <div class="receta">
-    <img src="https://i.imgur.com/4AI3wIe.jpg" alt="Panacota casera"> <!-- Puedes cambiar la URL por otra foto -->
-
+  <main>
     <h2>Panacota</h2>
-    <p><strong>Fecha:</strong> Primera receta juntos</p>
+    <img src="URL-DE-TU-IMAGEN.jpg" alt="Panna Cotta deliciosa"/>
 
-    <h3>Ingredientes:</h3>
+    <h3>Ingredientes</h3>
     <ul>
       <li>Nata para montar</li>
-      <li>Azúcar</li>
-      <li>Gelatina</li>
+      <li>Azucar</li>
       <li>Esencia de vainilla</li>
+      <li>Hojas de gelatina</li>
+      <li>Caramelillo</li>
     </ul>
 
-    <h3>Pasos:</h3>
-    <ol>
-      <li>Calentar la nata con el azúcar y la vainillita.</li>
-      <li>Añadir la gelatina ya hidratada y remover.</li>
-      <li>Verter en vasos del chino (despues del caramelo) y dejar enfriar en la nevera.</li>
-      <li>A comer siuuu</li>
-    </ol>
-  </div>
+    <h3>Preparación</h3>
+    <p>
+      1. Hidratamos las hojas de gelatina en aguita fria<br/>
+      2. Calentamos la nata con el azúcar y la vainilla.<br/>
+      3. Cuando empiece a hervir, retiramos y añadimos la gelatina escurrida.<br/>
+      4. Mezclamos bien hasta que se disuelva todo y echamos en vasitos del chino (despues del cramelito claramente).<br/>
+      5. A la nevera unas horitas.
+    </p>
+  </main>
 
-  <div class="footer">
-    Se junto el caramelo con la panacota, dia triste, rico pero no me liaria
-  </div>
+  <footer>
+    Se juntó el caramelo con lo demas, rico pero ni me liaria.
+  </footer>
+</body>
+</html>
 </body>
 </html>
