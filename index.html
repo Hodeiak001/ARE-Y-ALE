@@ -1,45 +1,45 @@
-<!DOCTYPE html>  
-<html lang="es">  
-<head>  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-  <title>Recetitas de Ale y Are</title>  
-  <style>  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recetitas de Ale y Are</title>
+  <style>
     * {
       box-sizing: border-box;
       transition: all 0.3s ease;
     }
 
-    body {  
-      font-family: 'Segoe UI', sans-serif;  
-      margin: 0;  
-      padding: 0;  
-      background: #e6fbf9; /* Turquesa muy clarito */
-      color: #4d4d4d;  
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #e6fbf9;
+      color: #4d4d4d;
       animation: fadeInBody 1s ease-in;
-    }  
+    }
 
     @keyframes fadeInBody {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
-    header {  
-      background: #f2e6fb;  /* Morado bebé súper clarito */
-      padding: 20px 30px;  
+    header {
+      background: #f2e6fb;
+      padding: 20px 30px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       position: relative;
-    }  
+    }
 
-    header h1 {  
+    header h1 {
       font-size: 1.5rem;
-      margin: 0;  
+      margin: 0;
       color: #333;
     }
 
-    header small {  
+    header small {
       color: #333;
       font-size: 1rem;
       margin-top: 5px;
@@ -82,14 +82,14 @@
 
     header .menu.active + .dropdown {
       display: block;
-    }  
+    }
 
     main {
       display: flex;
       gap: 30px;
       align-items: flex-start;
       padding: 30px;
-      background-color: #e0f7fa; /* Turquesa pastel */
+      background-color: #e0f7fa;
       animation: fadeInMain 1s ease-in-out;
     }
 
@@ -158,47 +158,90 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-  </style>  
-</head>  
-<body>  
-  <header>  
-    <h1>Recetitas de Ale y Are</h1>  
-    <small>Nuestro rinconcito de cosis</small>  
+
+    /* ESTILOS RESPONSIVE */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
+
+      section {
+        max-width: 100%;
+        padding: 0 10px;
+      }
+
+      header {
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 1.3rem;
+      }
+
+      header small {
+        font-size: 0.95rem;
+      }
+
+      header .menu {
+        top: 20px;
+        right: 20px;
+      }
+
+      header .dropdown {
+        top: 60px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Recetitas de Ale y Are</h1>
+    <small>Nuestro rinconcito de cosis</small>
     <div class="menu" onclick="toggleMenu()">&#9776;</div>
     <div class="dropdown">
       <a href="https://example.com/dulce" target="_blank">Dulce</a>
       <a href="https://example.com/salado" target="_blank">Salado</a>
     </div>
-  </header>  
-  
-  <main>  
-    <img src="https://github.com/Hodeiak001/ARE-Y-ALE/blob/main/Panacota.jpg?raw=true" alt="Imagen del postre">  
-    
+  </header>
+
+  <main>
+    <img src="https://github.com/Hodeiak001/ARE-Y-ALE/blob/main/Panacota.jpg?raw=true" alt="Imagen del postre">
+
     <section>
       <h2>Panacota</h2>
 
-      <h3>Ingredientes</h3>  
-      <ul>  
-        <li>Nata para montar</li>  
-        <li>Azúcar</li>  
-        <li>Esencia de vainilla</li>  
-        <li>Hojas de gelatina</li>  
-        <li>Caramelillo</li>  
-      </ul>  
+      <h3>Ingredientes</h3>
+      <ul>
+        <li>Nata para montar</li>
+        <li>Azúcar</li>
+        <li>Esencia de vainilla</li>
+        <li>Hojas de gelatina</li>
+        <li>Caramelillo</li>
+      </ul>
 
-      <h3>Preparación</h3>  
-      <p>  
-        1. Hidratamos las hojas de gelatina en aguita fría.<br/>  
-        2. Calentamos la nata con el azúcar y la vainilla.<br/>  
-        3. Cuando empiece a hervir, retiramos y añadimos la gelatina escurrida.<br/>  
-        4. Mezclamos bien hasta que se disuelva todo y echamos en vasitos del chino (después del caramelito claramente).<br/>  
-        5. A la nevera unas horitas.  
-      </p>  
+      <h3>Preparación</h3>
+      <p>
+        1. Hidratamos las hojas de gelatina en aguita fría.<br/>
+        2. Calentamos la nata con el azúcar y la vainilla.<br/>
+        3. Cuando empiece a hervir, retiramos y añadimos la gelatina escurrida.<br/>
+        4. Mezclamos bien hasta que se disuelva todo y echamos en vasitos del chino (después del caramelito claramente).<br/>
+        5. A la nevera unas horitas.
+      </p>
     </section>
-  </main>  
-  
-  <footer>  
-    Se juntó el caramelo con lo demás, rico pero ni me liaría.  
+  </main>
+
+  <footer>
+    Se juntó el caramelo con lo demás, rico pero ni me liaría.
   </footer>
 
   <script>
@@ -209,5 +252,5 @@
       dropdown.classList.toggle('active');
     }
   </script>
-</body>  
+</body>
 </html>
