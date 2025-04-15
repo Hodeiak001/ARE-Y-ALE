@@ -1,106 +1,121 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Recetitas de Ale y Are</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5fafd;
-      color: #4d4d4d;
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+  <title>Recetitas de Ale y Are</title>  
+  <style>  
+    body {  
+      font-family: 'Segoe UI', sans-serif;  
+      margin: 0;  
+      padding: 0;  
+      background: #c8f4d1;  /* Fondo turquesa/verde claro */
+      color: #000000;  /* Color de las letras en negro */
+    }  
+  
+    header {  
+      background: linear-gradient(90deg, #c7ceea, #b5ead7);  
+      padding: 20px;  
+    }  
+  
+    header h1 {  
+      font-size: 1.8rem;  
+      margin: 0;  
+      color: #4d4d4d;  
+      font-style: italic;  /* Cursiva */
+      text-decoration: underline;  /* Subrayado */
+    }  
+  
+    header small {  
+      display: block;  
+      font-size: 1rem;  
+      color: #555;  
+      margin-top: 5px;  
+    }  
+  
+    main {  
+      max-width: 1000px;  
+      margin: 30px auto;  
+      padding: 20px;  
+      background: white;  
+      border-radius: 12px;  
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);  
+    }  
+  
+    img {  
+      width: 150px;  /* Tamaño más pequeño */
+      height: 150px;  /* Tamaño más pequeño */
+      border-radius: 50%;  /* Imagen redonda */
+      margin-bottom: 20px;  
+      display: block;  
+      margin-left: auto;  
+      margin-right: auto;  
+    }  
+  
+    h2 {  
+      color: #7766c6;  
+      font-size: 2rem;  /* Aumentamos el tamaño para hacerlo más destacado */
+    }  
+  
+    ul {  
+      list-style: none;  
+      padding-left: 0;  
+    }  
+  
+    ul li::before {  
+      content: "♥";  
+      color: #b388eb;  
+      margin-right: 8px;  
+      font-size: 1.2rem;  /* Corazones más grandes */
+    }  
+  
+    h3 {  
+      font-size: 1.4rem;  /* Tamaño más grande para "Preparación" e "Ingredientes" */
     }
-
-    header {
-      background: linear-gradient(90deg, #c7ceea, #b5ead7);
-      padding: 20px;
-    }
-
-    header h1 {
-      font-size: 1.8rem;
-      margin: 0;
-      color: #4d4d4d;
-    }
-
-    header small {
-      display: block;
-      font-size: 1rem;
-      color: #555;
-      margin-top: 5px;
-    }
-
-    main {
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      color: #7766c6;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li::before {
-      content: "♥";
-      color: #b388eb;
-      margin-right: 8px;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 20px;
-      color: #888;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Recetitas de Ale y Are</h1>
-    <small>Nuestro rinconcito de cosis</small>
-  </header>
-
-  <main>
-    <h2>Panacota</h2>
-   <img src="https://github.com/Hodeiak001/ARE-Y-ALE/blob/main/Panacota.jpg?raw=true" alt="Imagen del postre" class="rounded shadow-lg">
-    <h3>Ingredientes</h3>
-    <ul>
-      <li>Nata para montar</li>
-      <li>Azucar</li>
-      <li>Esencia de vainilla</li>
-      <li>Hojas de gelatina</li>
-      <li>Caramelillo</li>
-    </ul>
-
-    <h3>Preparación</h3>
-    <p>
-      1. Hidratamos las hojas de gelatina en aguita fria<br/>
-      2. Calentamos la nata con el azúcar y la vainilla.<br/>
-      3. Cuando empiece a hervir, retiramos y añadimos la gelatina escurrida.<br/>
-      4. Mezclamos bien hasta que se disuelva todo y echamos en vasitos del chino (despues del cramelito claramente).<br/>
-      5. A la nevera unas horitas.
-    </p>
-  </main>
-
-  <footer>
-    Se juntó el caramelo con lo demas, rico pero ni me liaria.
-  </footer>
-</body>
-</html>
-</body>
+    
+    footer {  
+      text-align: center;  
+      font-size: 0.9rem;  
+      padding: 20px;  
+      color: #888;  
+    }  
+    
+    .receta-texto {  
+      white-space: pre-line;  /* Para que el texto de la receta no se vea en vertical y se ajuste a líneas */
+      word-wrap: break-word;  /* Ajuste de texto de forma más fluida */
+    }  
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <h1>Recetitas de Ale y Are</h1>  
+    <small>Nuestro rinconcito de cosis</small>  
+  </header>  
+  
+  <main>  
+    <h2>Panacota</h2>  
+    <img src="https://github.com/Hodeiak001/ARE-Y-ALE/blob/main/Panacota.jpg?raw=true" alt="Imagen del postre" class="rounded shadow-lg">  
+    <h3>Ingredientes</h3>  
+    <ul>  
+      <li>Nata para montar</li>  
+      <li>Azúcar</li>  
+      <li>Esencia de vainilla</li>  
+      <li>Hojas de gelatina</li>  
+      <li>Caramelillo</li>  
+    </ul>  
+  
+    <h3>Preparación</h3>  
+    <p class="receta-texto">  
+      1. Hidratamos las hojas de gelatina en agüita fría.  
+      2. Calentamos la nata con el azúcar y la vainilla.  
+      3. Cuando empiece a hervir, retiramos y añadimos la gelatina escurrida.  
+      4. Mezclamos bien hasta que se disuelva todo y echamos en vasitos del chino (después del caramelito claramente).  
+      5. A la nevera unas horitas.  
+    </p>  
+  </main>  
+  
+  <footer>  
+    Se juntó el caramelo con lo demás, rico pero ni me liaría.  
+  </footer>  
+</body>  
 </html>
