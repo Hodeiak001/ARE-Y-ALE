@@ -41,7 +41,7 @@
 
     header small {
       font-size: 0.95rem;
-      color: #666;
+      color: #333; /* Cambio de color a igual que el título */
       margin-top: 5px;
     }
 
@@ -93,10 +93,7 @@
     .recipe-content {
       flex: 1;
       max-width: 500px;
-      background-color: #dff6f5;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       transition: transform 0.3s ease;
     }
 
@@ -123,6 +120,19 @@
       content: "♥";
       color: #c192e4;
       margin-right: 8px;
+      animation: float 3s ease-in-out infinite; /* Animación flotante para los corazoncitos */
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
     }
 
     .recipe-content p {
@@ -131,8 +141,8 @@
     }
 
     .recipe-img {
-      width: 160px;
-      height: 160px;
+      width: 250px;
+      height: 250px;
       object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.15);
@@ -142,7 +152,7 @@
       text-align: center;
       font-size: 0.9rem;
       padding: 20px;
-      color: #999;
+      color: #333; /* Cambio de color a igual que el título */
     }
 
     /* Responsive Design */
