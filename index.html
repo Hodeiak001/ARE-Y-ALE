@@ -14,14 +14,15 @@
     }  
   
     header {  
-      background: linear-gradient(90deg, #c7ceea, #b5ead7);  
+      background-color: #b8a7e2;  /* Fondo morado pastel */
       padding: 20px;  
     }  
   
     header h1 {  
-      font-size: 1.8rem;  
+      font-size: 2rem;  
       margin: 0;  
       color: #4d4d4d;  
+      font-family: 'Dancing Script', cursive;  /* Fuente más bonita y delicada */
       font-style: italic;  /* Cursiva */
       text-decoration: underline;  /* Subrayado */
     }  
@@ -37,21 +38,27 @@
       max-width: 1000px;  
       margin: 30px auto;  
       padding: 20px;  
-      background: white;  
+      background: #b2e7f1;  /* Fondo turquesa pastel en ingredientes y preparación */
       border-radius: 12px;  
       box-shadow: 0 0 10px rgba(0,0,0,0.1);  
     }  
   
     img {  
-      width: 150px;  /* Tamaño más pequeño */
-      height: 150px;  /* Tamaño más pequeño */
-      border-radius: 50%;  /* Imagen redonda */
+      width: 200px;  /* Tamaño más grande */
+      height: 200px;  /* Tamaño más grande */
       margin-bottom: 20px;  
       display: block;  
       margin-left: auto;  
       margin-right: auto;  
     }  
-  
+    
+    /* Estilo de estrella */
+    .imagen-estrella {
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      background: url('https://github.com/Hodeiak001/ARE-Y-ALE/blob/main/Panacota.jpg?raw=true') no-repeat center;
+      background-size: cover;
+    }  
+    
     h2 {  
       color: #7766c6;  
       font-size: 2rem;  /* Aumentamos el tamaño para hacerlo más destacado */
@@ -94,7 +101,7 @@
   
   <main>  
     <h2>Panacota</h2>  
-    <img src="https://github.com/Hodeiak001/ARE-Y-ALE/blob/main/Panacota.jpg?raw=true" alt="Imagen del postre" class="rounded shadow-lg">  
+    <div class="imagen-estrella"></div>  <!-- Imagen con forma de estrella -->
     <h3>Ingredientes</h3>  
     <ul>  
       <li>Nata para montar</li>  
