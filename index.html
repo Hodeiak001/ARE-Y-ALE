@@ -9,59 +9,84 @@
       font-family: 'Segoe UI', sans-serif;  
       margin: 0;  
       padding: 0;  
-      background: #c8f4d1;  /* Fondo turquesa/verde claro */
-      color: #000000;  /* Color de las letras en negro */
-    }  
-  
-    header {  
-      background-color: #b8a7e2;  /* Fondo morado pastel */
-      padding: 20px;  
-    }  
-  
-    header h1 {  
-      font-size: 2rem;  
-      margin: 0;  
+      background: #e0f7fa; /* Fondo turquesa suave */
       color: #4d4d4d;  
-      font-family: 'Dancing Script', cursive;  /* Fuente más bonita y delicada */
-      font-style: italic;  /* Cursiva */
-      text-decoration: underline;  /* Subrayado */
     }  
-  
-    header small {  
-      display: block;  
-      font-size: 1rem;  
-      color: #555;  
-      margin-top: 5px;  
+
+    header {  
+      background: #b388eb;  /* Morado pastel */
+      padding: 20px;  
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }  
-  
+
+    header h1 {  
+      font-family: 'Dancing Script', cursive;  /* Fuente delicada */
+      font-size: 2rem;  /* Título más pequeño */
+      margin: 0;  
+      color: white;  
+      text-align: left;
+    }
+
+    header .menu {
+      font-size: 2rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    header .dropdown {
+      display: none;
+      position: absolute;
+      top: 80px;
+      right: 20px;
+      background-color: #b388eb;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      z-index: 10;
+    }
+
+    header .dropdown a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 20px;
+      display: block;
+    }
+
+    header .dropdown a:hover {
+      background-color: #4d4d4d;
+    }
+
+    header .menu.active + .dropdown {
+      display: block;
+    }  
+
     main {  
-      max-width: 1000px;  
+      max-width: 700px;  
       margin: 30px auto;  
       padding: 20px;  
-      background: #b2e7f1;  /* Fondo turquesa pastel en ingredientes y preparación */
+      background: #e3f2fd; /* Fondo de ingredientes y preparación más suave */
       border-radius: 12px;  
       box-shadow: 0 0 10px rgba(0,0,0,0.1);  
     }  
   
     img {  
-      width: 200px;  /* Tamaño más grande */
-      height: 200px;  /* Tamaño más grande */
+      width: 150px;  /* Imagen mediana */
+      height: 150px; /* Imagen mediana */
+      border-radius: 50%; /* Hace la imagen circular */
+      border: 5px solid #b388eb;  /* Marco de estrella */
+      object-fit: cover;
       margin-bottom: 20px;  
-      display: block;  
-      margin-left: auto;  
-      margin-right: auto;  
     }  
-    
-    /* Estilo de estrella */
-    .imagen-estrella {
+
+    /* Estilo para imagen estrella */
+    img.star {
       clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-      background: url('https://github.com/Hodeiak001/ARE-Y-ALE/blob/main/Panacota.jpg?raw=true') no-repeat center;
-      background-size: cover;
-    }  
-    
+    }
+
     h2 {  
       color: #7766c6;  
-      font-size: 2rem;  /* Aumentamos el tamaño para hacerlo más destacado */
     }  
   
     ul {  
@@ -73,23 +98,13 @@
       content: "♥";  
       color: #b388eb;  
       margin-right: 8px;  
-      font-size: 1.2rem;  /* Corazones más grandes */
     }  
-  
-    h3 {  
-      font-size: 1.4rem;  /* Tamaño más grande para "Preparación" e "Ingredientes" */
-    }
-    
+
     footer {  
       text-align: center;  
       font-size: 0.9rem;  
       padding: 20px;  
       color: #888;  
-    }  
-    
-    .receta-texto {  
-      white-space: pre-line;  /* Para que el texto de la receta no se vea en vertical y se ajuste a líneas */
-      word-wrap: break-word;  /* Ajuste de texto de forma más fluida */
     }  
   </style>  
 </head>  
@@ -97,32 +112,47 @@
   <header>  
     <h1>Recetitas de Ale y Are</h1>  
     <small>Nuestro rinconcito de cosis</small>  
+    <!-- Menú hamburguesa -->
+    <div class="menu" onclick="toggleMenu()">&#9776;</div>
+    <div class="dropdown">
+      <a href="#">Dulce</a>
+      <a href="#">Salado</a>
+    </div>
   </header>  
   
   <main>  
     <h2>Panacota</h2>  
-    <div class="imagen-estrella"></div>  <!-- Imagen con forma de estrella -->
+    <img src="https://github.com/Hodeiak001/ARE-Y-ALE/blob/main/Panacota.jpg?raw=true" alt="Imagen del postre" class="star">  
     <h3>Ingredientes</h3>  
     <ul>  
       <li>Nata para montar</li>  
-      <li>Azúcar</li>  
+      <li>Azucar</li>  
       <li>Esencia de vainilla</li>  
       <li>Hojas de gelatina</li>  
       <li>Caramelillo</li>  
     </ul>  
   
     <h3>Preparación</h3>  
-    <p class="receta-texto">  
-      1. Hidratamos las hojas de gelatina en agüita fría.  
-      2. Calentamos la nata con el azúcar y la vainilla.  
-      3. Cuando empiece a hervir, retiramos y añadimos la gelatina escurrida.  
-      4. Mezclamos bien hasta que se disuelva todo y echamos en vasitos del chino (después del caramelito claramente).  
+    <p>  
+      1. Hidratamos las hojas de gelatina en aguita fría<br/>  
+      2. Calentamos la nata con el azúcar y la vainilla.<br/>  
+      3. Cuando empiece a hervir, retiramos y añadimos la gelatina escurrida.<br/>  
+      4. Mezclamos bien hasta que se disuelva todo y echamos en vasitos del chino (después del caramelito claramente).<br/>  
       5. A la nevera unas horitas.  
     </p>  
   </main>  
   
   <footer>  
     Se juntó el caramelo con lo demás, rico pero ni me liaría.  
-  </footer>  
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.menu');
+      const dropdown = document.querySelector('.dropdown');
+      menu.classList.toggle('active');
+      dropdown.classList.toggle('active');
+    }
+  </script>
 </body>  
 </html>
