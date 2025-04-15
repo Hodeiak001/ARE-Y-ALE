@@ -9,30 +9,42 @@
       font-family: 'Segoe UI', sans-serif;  
       margin: 0;  
       padding: 0;  
-      background: #e0f7fa; /* Fondo turquesa suave */
+      background: #e6fbf9; /* Turquesa muy clarito */
       color: #4d4d4d;  
     }  
 
     header {  
-      background: #b388eb;  /* Morado pastel */
+      background: #f2e6fb;  /* Morado bebé súper clarito */
       padding: 20px;  
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }  
 
     header h1 {  
-      font-family: 'Dancing Script', cursive;  /* Fuente delicada */
-      font-size: 2rem;  /* Título más pequeño */
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1.5rem;
       margin: 0;  
-      color: white;  
+      color: #333; /* Gris oscuro */
+      text-align: left;
+    }
+
+    header small {  
+      font-family: 'Segoe UI', sans-serif;
+      color: #333; /* Gris oscuro */
+      font-size: 1rem;
+      margin-top: 5px;
+      display: block;
       text-align: left;
     }
 
     header .menu {
       font-size: 2rem;
       cursor: pointer;
-      color: white;
+      color: #333;  /* Gris oscuro */
+      position: absolute;
+      right: 20px;
     }
 
     header .dropdown {
@@ -40,7 +52,7 @@
       position: absolute;
       top: 80px;
       right: 20px;
-      background-color: #b388eb;
+      background-color: #f2e6fb; /* Morado clarito */
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       padding: 10px;
@@ -48,14 +60,14 @@
     }
 
     header .dropdown a {
-      color: white;
+      color: #333; /* Gris oscuro */
       text-decoration: none;
       padding: 8px 20px;
       display: block;
     }
 
     header .dropdown a:hover {
-      background-color: #4d4d4d;
+      background-color: #d1d1d1;
     }
 
     header .menu.active + .dropdown {
@@ -63,60 +75,58 @@
     }  
 
     main {  
-      max-width: 700px;  
-      margin: 30px auto;  
-      padding: 20px;  
-      background: #e3f2fd; /* Fondo de ingredientes y preparación más suave */
-      border-radius: 12px;  
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);  
-    }  
-  
-    img {  
-      width: 150px;  /* Imagen mediana */
-      height: 150px; /* Imagen mediana */
-      border-radius: 50%; /* Hace la imagen circular */
-      border: 5px solid #b388eb;  /* Marco de estrella */
-      object-fit: cover;
-      margin-bottom: 20px;  
+      max-width: 800px;
+      margin: 30px 0 30px 30px;
+      padding: 20px;
+      background: #e0f7fa; /* Fondo de ingredientes y preparación turquesa pastel */
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }  
 
-    /* Estilo para imagen estrella */
+    img {  
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 5px solid #b388eb;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }  
+
     img.star {
       clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     }
 
-    h2 {  
-      color: #7766c6;  
-    }  
-  
-    ul {  
-      list-style: none;  
-      padding-left: 0;  
-    }  
-  
-    ul li::before {  
-      content: "♥";  
-      color: #b388eb;  
-      margin-right: 8px;  
-    }  
+    h2 {
+      color: #0097a7;  /* Turquesa más fuerte */
+    }
 
-    footer {  
-      text-align: center;  
-      font-size: 0.9rem;  
-      padding: 20px;  
-      color: #888;  
-    }  
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "♥";
+      color: #b388eb;
+      margin-right: 8px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 20px;
+      color: #888;
+    }
   </style>  
 </head>  
 <body>  
   <header>  
     <h1>Recetitas de Ale y Are</h1>  
     <small>Nuestro rinconcito de cosis</small>  
-    <!-- Menú hamburguesa -->
     <div class="menu" onclick="toggleMenu()">&#9776;</div>
     <div class="dropdown">
-      <a href="#">Dulce</a>
-      <a href="#">Salado</a>
+      <a href="https://example.com/dulce" target="_blank">Dulce</a>
+      <a href="https://example.com/salado" target="_blank">Salado</a>
     </div>
   </header>  
   
