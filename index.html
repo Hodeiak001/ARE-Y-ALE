@@ -1,262 +1,269 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Recetitas de Ale y Are</title>
-  <style>
-    * {
-      box-sizing: border-box;
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+  <title>Recetitas de Ale y Are</title>  
+  <style>  
+    /* Estilos generales */
+    body {  
+      font-family: 'Segoe UI', sans-serif;  
+      margin: 0;  
+      padding: 0;  
+      background-color: #B3FCEF;  
+      color: #4d4d4d;  
     }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #B3FCEF; /* Fondo general */
-      color: #333;
-      transition: background 0.3s ease;
+    header {  
+      background-color: #E5AAFE;  
+      padding: 20px;  
+      text-align: center;  
     }
 
-    header {
-      background-color: #F3D6FF; /* Fondo de Recetitas de Ale y Are */
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    header h1 {  
+      font-size: 2.2rem;  
+      color: #000;  
+      font-family: 'Arial', sans-serif;  
+      margin: 0;  
     }
 
-    .title-section {
-      display: flex;
-      flex-direction: column;
+    header small {  
+      display: block;  
+      font-size: 1rem;  
+      color: #000;  
     }
 
-    header h1 {
-      font-size: 1.5rem;
-      margin: 0;
-      font-weight: 400;
-      color: #333;
+    main {  
+      max-width: 1000px;  
+      margin: 0 auto;  
+      padding: 40px 20px;  
+      background: #D7FFF5;  
+      border-radius: 15px;  
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  
+      transition: all 0.3s ease-in-out;  
     }
 
-    header small {
-      font-size: 0.95rem;
-      color: #333; /* Cambio de color a igual que el título */
-      margin-top: 5px;
+    h2 {  
+      color: #4d4d4d;  
+      text-align: left;  
+      font-size: 2rem;  
+      margin-bottom: 10px;  
     }
 
-    .menu {
-      position: relative;
+    /* Imagen de la receta con el borde cuadrado */
+    img {  
+      width: 100%;  
+      max-width: 300px;  
+      margin-bottom: 20px;  
+      border-radius: 10px;  
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  
     }
 
-    .hamburger {
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #444;
-      display: block;
-      transition: transform 0.3s ease;
+    /* Estilo para la lista de ingredientes */
+    ul {  
+      list-style: none;  
+      padding-left: 0;  
     }
 
-    .hamburger:hover {
-      transform: scale(1.2);
+    ul li {  
+      font-size: 1.1rem;  
+      color: #4d4d4d;  
+      padding-left: 1.2rem;  
+      position: relative;  
     }
 
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 35px;
-      right: 0;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      z-index: 1000;
+    ul li::before {  
+      content: "♥";  
+      color: #b388eb;  
+      position: absolute;  
+      left: 0;  
+      top: 0;  
+      font-size: 1.5rem;  
+      animation: float 1.5s infinite alternate;  
     }
 
-    .dropdown a {
-      display: block;
-      padding: 10px 20px;
-      text-decoration: none;
-      color: #333;
-      transition: background-color 0.3s ease;
+    /* Animación flotante de los corazones */
+    @keyframes float {  
+      0% {  
+        transform: translateY(0);  
+      }  
+      100% {  
+        transform: translateY(-10px);  
+      }  
     }
 
-    .dropdown a:hover {
-      background-color: #f1f1f1;
+    /* Estilo de la preparación */
+    h3 {  
+      font-size: 1.3rem;  
+      color: #4d4d4d;  
+      margin-top: 20px;  
     }
 
-    main {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 30px;
-      gap: 30px;
-      flex-wrap: wrap;
-      animation: fadeIn 1.5s ease-in-out;
+    p {  
+      font-size: 1.1rem;  
+      line-height: 1.6;  
+      color: #333;  
+      margin-top: 10px;  
     }
 
-    .recipe-content {
-      flex: 1;
-      max-width: 500px;
-      padding: 20px;
-      background-color: rgba(215, 255, 245, 0.8); /* Fondo de bloque transparente */
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+    /* Estilo del footer */
+    footer {  
+      text-align: center;  
+      font-size: 1rem;  
+      padding: 20px;  
+      color: #555;  
+      background-color: #E5AAFE;  
+      margin-top: 40px;  
     }
 
-    .recipe-content:hover {
-      transform: translateY(-4px);
+    /* Barra de menú (hamburguesa) */
+    .menu-bar {  
+      display: flex;  
+      justify-content: flex-end;  
+      padding: 10px 20px;  
+      margin-top: 20px;  
     }
 
-    .recipe-content h2 {
-      color: #45b3af;
+    .menu-bar .bar {  
+      width: 25px;  
+      height: 4px;  
+      background-color: #4d4d4d;  
+      margin: 5px 0;  
+      cursor: pointer;  
     }
 
-    .recipe-content h3 {
-      font-size: 1.2rem;
-      margin-top: 20px;
+    /* Estilo de los tres puntos */
+    .menu-bar .bar:hover {  
+      background-color: #E5AAFE;  
     }
 
-    .recipe-content ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 1.05rem;
-    }
-
-    .recipe-content ul li::before {
-      content: "♥";
-      color: #c192e4;
-      margin-right: 8px;
-      animation: float 3s ease-in-out infinite; /* Animación flotante para los corazoncitos */
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    .recipe-content p {
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-
-    .recipe-img {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-    }
-
-    .recipe-img:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 20px;
-      color: #333;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      main {
-        flex-direction: column;
-        padding: 20px;
+    /* Estilos responsivos para móvil */
+    @media (max-width: 768px) {  
+      header h1 {  
+        font-size: 1.8rem;  
       }
 
-      .recipe-img {
-        width: 100%;
-        height: auto;
-        margin-bottom: 20px;
+      main {  
+        padding: 20px;  
       }
 
-      .recipe-content {
-        max-width: 100%;
+      img {  
+        max-width: 90%;  
+      }
+
+      h2, h3 {  
+        font-size: 1.6rem;  
+      }
+
+      ul li {  
+        font-size: 1.1rem;  
+      }
+
+      footer {  
+        font-size: 0.9rem;  
       }
     }
 
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+    /* Menú de selección de dulce o salado */
+    .menu {  
+      display: none;  
+      background-color: #F3D6FF;  
+      position: absolute;  
+      right: 20px;  
+      top: 40px;  
+      padding: 10px 20px;  
+      border-radius: 8px;  
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  
     }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="title-section">
-      <h1>Recetitas de Ale y Are</h1>
-      <small>Nuestro rinconcito de cosis</small>
+
+    .menu a {  
+      display: block;  
+      font-size: 1.2rem;  
+      padding: 5px 0;  
+      text-decoration: none;  
+      color: #4d4d4d;  
+    }
+
+    .menu a:hover {  
+      color: #000;  
+    }
+
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <h1>Recetitas de Ale y Are</h1>  
+    <small>Nuestro rinconcito de cosis</small>  
+  </header>  
+
+  <div class="menu-bar" onclick="toggleMenu()">  
+    <div class="bar"></div>  
+    <div class="bar"></div>  
+    <div class="bar"></div>  
+  </div>  
+
+  <!-- Menú desplegable -->
+  <div id="menu" class="menu">  
+    <a href="#" onclick="showRecipe('dulce')">Dulce</a>  
+    <a href="#" onclick="showRecipe('salado')">Salado</a>  
+  </div>
+
+  <main id="content">  
+    <!-- Receta de Panacota, mostrada por defecto en Dulce -->
+    <div id="recipe-dulce">
+      <h2>Panacota</h2>  
+      <img src="https://github.com/Hodeiak001/ARE-Y-ALE/blob/main/Panacota.jpg?raw=true" alt="Imagen del postre" class="rounded shadow-lg">  
+      <h3>Ingredientes</h3>  
+      <ul>  
+        <li>Nata para montar</li>  
+        <li>Azúcar</li>  
+        <li>Esencia de vainilla</li>  
+        <li>Hojas de gelatina</li>  
+        <li>Caramelillo</li>  
+      </ul>  
+
+      <h3>Preparación</h3>  
+      <p>  
+        1. Hidratamos las hojas de gelatina en aguita fría.<br/>  
+        2. Calentamos la nata con el azúcar y la vainilla.<br/>  
+        3. Cuando empiece a hervir, retiramos y añadimos la gelatina escurrida.<br/>  
+        4. Mezclamos bien hasta que se disuelva todo y echamos en vasitos (después del caramelo, claramente).<br/>  
+        5. A la nevera unas horitas.  
+      </p>  
     </div>
-    <div class="menu">
-      <button class="hamburger" onclick="toggleDropdown()">☰</button>
-      <div class="dropdown" id="dropdownMenu">
-        <a href="#">Dulce</a>
-        <a href="#">Salado</a>
-      </div>
+
+    <!-- Espacio para recetas saladas -->
+    <div id="recipe-salado" style="display: none;">
+      <h2>Recetas Saladas</h2>  
+      <p>Aún no hay recetas saladas. ¡Pronto las añadiremos!</p>  
     </div>
-  </header>
 
-  <main>
-    <img src="https://github.com/Hodeiak001/ARE-Y-ALE/blob/main/Panacota.jpg?raw=true" alt="Panacota" class="recipe-img">
-    <div class="recipe-content">
-      <h2>Panacota</h2>
+  </main>  
 
-      <h3>Ingredientes</h3>
-      <ul>
-        <li>Nata para montar</li>
-        <li>Azúcar</li>
-        <li>Esencia de vainilla</li>
-        <li>Hojas de gelatina</li>
-        <li>Caramelillo</li>
-      </ul>
+  <footer>  
+    Se juntó el caramelo con lo demás, rico pero no me liaría.  
+  </footer>  
 
-      <h3>Preparación</h3>
-      <p>
-        1. Hidratamos las hojas de gelatina en agüita fría.<br>
-        2. Calentamos la nata con el azúcar y la vainilla.<br>
-        3. Cuando empiece a hervir, retiramos y añadimos la gelatina escurrida.<br>
-        4. Mezclamos bien hasta que se disuelva todo y echamos en vasitos del chino (después del caramelito claramente).<br>
-        5. A la nevera unas horitas.
-      </p>
-    </div>
-  </main>
-
-  <footer>
-    Se juntó el caramelo con lo demás, rico pero ni me liaría.
-  </footer>
-
-  <script>
-    function toggleDropdown() {
-      const menu = document.getElementById("dropdownMenu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
+  <script>  
+    // Función para mostrar u ocultar el menú
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     }
 
-    window.addEventListener("click", function(event) {
-      const dropdown = document.getElementById("dropdownMenu");
-      const button = document.querySelector(".hamburger");
-      if (!button.contains(event.target)) {
-        dropdown.style.display = "none";
+    // Función para mostrar recetas según el tipo (Dulce o Salado)
+    function showRecipe(type) {
+      const dulceRecipe = document.getElementById('recipe-dulce');
+      const saladoRecipe = document.getElementById('recipe-salado');
+
+      if (type === 'dulce') {
+        dulceRecipe.style.display = 'block';
+        saladoRecipe.style.display = 'none';
+      } else if (type === 'salado') {
+        dulceRecipe.style.display = 'none';
+        saladoRecipe.style.display = 'block';
       }
-    });
+    }
   </script>
-</body>
-</html>
+</body>  
+</html>  
